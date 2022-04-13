@@ -1,0 +1,55 @@
+.btn {
+  text-decoration: none;
+  color: #FFFFFF;
+  background: #1362E1;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 100%;
+
+  &__header {
+    font-size: 18px;
+    line-height: 22px;
+
+    padding: 16px 140px;
+    margin-top: auto;
+
+    order: 3;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #393737;
+      @media(min-width: 576px){
+        display: none;
+      }
+    }
+
+    @media(min-width: 576px) {
+      max-width: 207px;
+    }
+    @media(min-width: 1100px){
+      margin: 0;
+    }
+  }
+
+  &__start{
+    font-size: 24px;
+    line-height: 29px;
+    padding: 25px 75px;
+    
+    @media(min-width: 992px){
+      max-width: 335px;
+    }
+  }
+}

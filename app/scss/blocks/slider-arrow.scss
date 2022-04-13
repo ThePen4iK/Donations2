@@ -1,0 +1,10 @@
+.arrow {
+  &__prev {
+    margin-right: 16px;
+    cursor: pointer;
+  }
+
+  &__next {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.min.css">
+  <title>Donation</title>
+</head>
+
+
+<body>
+<header class="header">
+    <div class="container header__container">
+        <a href="/index.html" class="header__logo">
+            <picture class="picture">
+                <source
+                        media="(min-width: 1200px)"
+                        srcset="../img/logo-desk.png, ../img/logo-desk@2x.png 2x"
+                />
+                <img class="logo header__logo" src="../img/logo.png" alt="logo">
+            </picture>
+        </a>
+
+        <div class="header__wrapper">
+            <nav class="navigation">
+                <ul class="navigation__list">
+                    <li class="navigation__item">
+                        <a href="#" class="navigation__link">What We Do</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="#" class="navigation__link">Gallery</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="#" class="navigation__link">Tactical Gear</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="header__language">EN</button>
+            <a href="#" class="btn btn__header">Donate</a>
+        </div>
+
+        <button class="hamburger">
+            <div class="hamburger__menu">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </div>
+        </button>
+    </div>
+</header>
+
+<main class="main">
+    <section class="section start">
+    <div class="container">
+        <div class="start__wrapper">
+            <h1 class="start__text">
+                We are volunteers helping people in the most dangerous parts of Kharkiv -
+                a frontline city in this horrific war in Ukraine
+            </h1>
+            <a href="#" class="btn btn__start">Contact us</a>
+        </div>
+    </div>
+    <picture class="picture">
+        <source
+                media="(min-width: 600px)"
+                srcset="../img/start-desck.jpg, ../img/start-desck@2x.jpg 2x"
+        />
+        <img class="start__img" src="../img/start.jpg" alt="start">
+    </picture>
+</section>
+
+    <section class="section what">
+    <div class="container">
+        <h2 class="what__title">What We Do</h2>
+        <div class="what__wrapper">
+            <picture class="picture">
+                <source
+                        media="(min-width: 992px)"
+                        srcset="../img/what-desck.jpg, ../img/what-desck@2x.jpg 2x"
+                />
+                <img class="what__img" src="../img/what-desck.jpg" alt="what">
+            </picture>
+            <ul class="what__list">
+                <li class="what__item">
+                <span class="what__number">
+                    01
+                </span>
+                    <h3 class="what__subtitle">We deliver humanitarian aid
+                        to Kharkiv</h3>
+                    <p class="what__text">Not enough humanitarian aid reaches the city. We have two trucks and we
+                        deliver
+                        humanitarian aid from Lviv and Poltava. We also buy food, medical supplies, and other
+                        necessities.</p>
+                </li>
+
+                <li class="what__item">
+                <span class="what__number">
+                    02
+                </span>
+                    <h3 class="what__subtitle">We distribute food directly to homes and bomb shelters</h3>
+                    <p class="what__text">Our service area includes Saltivka and surrounding neighborhoods in NE
+                        Kharkiv. There are many elderly, disabled, and scared people who cannot leave their apartments,
+                        homes, basements, or other hide-outs. At the moment, we feed around 5,000 people including 700
+                        immobile persons.</p>
+                </li>
+
+                <li class="what__item">
+                <span class="what__number what__number--mod">
+                    03
+                </span>
+                    <h3 class="what__subtitle">We help with medical aid and local evacuation </h3>
+                    <p class="what__text">Our neighborhood hospitals, medical offices and pharmacies are closed due to
+                        non-stop shelling and bombings. There is no public transportation. We drive people from these
+                        areas to the open hospitals in other parts of the city, and to the Main Railroad Station for
+                        evacuation.</p>
+                </li>
+
+                <li class="what__item">
+                <span class="what__number what__number--mod">
+                    04
+                </span>
+                    <h3 class="what__subtitle">We deliver humanitarian aid
+                        to Kharkiv</h3>
+                    <p class="what__text">Not enough humanitarian aid reaches the city. We have two trucks and we
+                        deliver
+                        humanitarian aid from Lviv and Poltava. We also buy food, medical supplies, and other
+                        necessities.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+    <section class="section gallery" id="gallery">
+    <div class="container">
+        <div class="gallery__wrapper">
+            <h2 class="title gallery__title">Gallery</h2>
+
+            <div class="slider__navigation">
+                <div class="arrow__prev">
+                    <svg class="arrow__icon" width="55" height="55" fill="none">
+                        <use xlink:href="../img/sprite.svg#arrow-prev"></use>
+                    </svg>
+                </div>
+                <div class="arrow__next">
+                    <svg class="arrow__icon" width="55" height="55" fill="none">
+                        <use xlink:href="../img/sprite.svg#arrow-next"></use>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper gallery__swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide gallery__slide">
+                    <div class="gallery__wrap">
+                        <span class="gallery__decor"></span>
+                        <video loop playsinline class="gallery__slide-video"
+                        >
+                            <source src="../img/video/video-1.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                </div>
+                <div class="swiper-slide gallery__slide">
+                    <picture class="picture">
+                        <source
+                                media="(min-width: 600px)"
+                                srcset="../img/gallery-desck-1.jpg, ../img/gallery-desck-1@2x.jpg 2x"
+                        />
+                        <img class="gallery__img"  src="../img/gallery-1.jpg" alt="gallery">
+                    </picture>
+                </div>
+                <div class="swiper-slide gallery__slide">
+                    <picture class="picture">
+                        <source
+                                media="(min-width: 600px)"
+                                srcset="../img/gallery-desck-2.jpg, ../img/gallery-desck-2@2x.jpg 2x"
+                        />
+                        <img class="gallery__img" src="../img/gallery-2.jpg" alt="gallery">
+                    </picture>
+                </div>
+
+                <div class="swiper-slide gallery__slide">
+                    <picture class="picture">
+                        <source
+                                media="(min-width: 600px)"
+                                srcset="../img/gallery-desck-3.jpg, ../img/gallery-desck-3@2x.jpg 2x"
+                        />
+                        <img class="gallery__img" src="../img/gallery-3.jpg" alt="gallery">
+                    </picture>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <section class="section gear">
+    <div class="container">
+        <div class="gear__wrapper">
+            <div class="gear__content">
+                <h2 class="gear__title">
+                    Tactical gear
+                </h2>
+
+                <p class="gear__text gear__text--mod">We are Vadym’s friends in the USA. We collect small donations of tactical gear
+                    from individuals and ship them to Ukraine. There is no donation too small - all are important! If
+                    you have a larger donation or equipment that requires special export licenses, we can match you with
+                    the appropriate non-profit organization in your area.
+                   <a href="#" class="gear__link">Contact us</a>  </p>
+
+                <h3 class="gear__subtitle">
+                    Suggested Highest Priority items:
+                </h3>
+                <p class="gear__text">Body armor, carriers, plates, Kevlar helmets, load-bearing vests, tactical belts,
+                    various military bags, tactical backpacks – any size, tactical knee and elbow pads, tactical gloves,
+                    tactical glasses.</p>
+
+                <p class="gear__text">Individual military first aid kits, tactical medical kits, Israeli bandages,
+                    tourniquets, first aid splints, combat medical nasopharyngeal airway systems, foldable stretchers,
+                    supplements for mental alertness.</p>
+
+                <p class="gear__text">UBACS combat shirts, summer uniforms, combat boots, thermal underwear, insoles,
+                    socks, summer balaclavas (full face), weather resistant clothing, army ponchos.</p>
+
+                <p class="gear__text">Survival kits and camping gear: multitools, survival water filtration kits,
+                    headlamps, flashlights, lanterns, sleeping bags, sleeping pads, thermal blankets (camo), emergency
+                    tents (camo), military water bottles with pouches.</p>
+            </div>
+            <picture class="picture">
+                <source
+                        media="(min-width: 600px)"
+                        srcset="../img/gear-desck.jpg, ../img/gear-desck@2x.jpg 2x"
+                />
+                <img class="gear__img" src="../img/gear.jpg" alt="gear">
+            </picture>
+        </div>
+    </div>
+</section>
+
+    <section class="section help">
+    <div class="container help__container">
+        <h2 class="help__title">
+            Help refugee families and more
+        </h2>
+        <div class="help__content">
+            <p class="help__text">We help refugee families with cancer patients, mostly from Kharkiv, find appropriate
+                hospitals in Europe, and book temporary housing on the way. </p>
+
+            <p class="help__text">Your money will go only to Ukrainian causes. Please <a href="#" class="help__link">contact
+                us</a> if you have questions or
+                would like to help in any other way. </p>
+
+            <p class="help__text">Thank you. Glory to Ukraine! <br> Glory to Heroes! </p>
+        </div>
+    </div>
+</section>
+
+    <section class="section support">
+    <div class="container">
+        <div class="support__wrapper">
+        <h2 class="support__title">
+            Support us with
+            a donation
+        </h2>
+            <ul class="support__list">
+                <li class="support__item">
+                    <button class="support__btn">
+                        Credit Card
+                        <svg class="support__icon" width="34" height="24" fill="none">
+                            <use xlink:href="../img/sprite.svg#credit"></use>
+                        </svg>
+                    </button>
+                </li>
+
+                <li class="support__item">
+                    <button class="support__btn">
+                        <svg class="support__icon" width="158" height="40" fill="none">
+                            <use xlink:href="../img/sprite.svg#paypal"></use>
+                        </svg>
+                    </button>
+                </li>
+
+                <li class="support__item">
+                    <button class="support__btn">
+                        Crypto
+                        <svg class="support__icon" width="37" height="37"  fill="none">
+                            <use xlink:href="../img/sprite.svg#crypto"></use>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+</main>
+<footer class="footer">
+    <div class="container footer__container">
+        <a href="/index.html" class="header__logo ">
+            <picture class="picture">
+                <source
+                        media="(min-width: 1200px)"
+                        srcset="../img/logo-desk.png, ../img/logo-desk@2x.png 2x"
+                />
+                <img class="logo header__logo" src="../img/logo.png" alt="logo">
+            </picture>
+        </a>
+
+        <div class="footer__date">
+            05.04.2022
+        </div>
+    </div>
+
+
+    <div class="popup" style="display: none">
+        <div class="popup__container">
+            <button class="popup__close">
+                <svg class="popup__icon" width="10" height="10" fill="none">
+                    <use xlink:href="../img/sprite.svg#close"></use>
+                </svg>
+            </button>
+
+            <h2 class="popup__title">
+                Crypto wallet numbers
+            </h2>
+
+            <ul class="popup__list">
+                <li class="popup__item">
+                    <div class="popup__item-wrap">
+                        <h4 class="popup__item-title">BTC (BTC)</h4>
+                        <p class="popup__item-code">19M3uQoyNt1mZbC6T3rRY18BgFit3GYopz</p>
+                    </div>
+                    <button class="popup__item-btn">
+                        <svg class="popup__item-icon" width="19" height="21" fill="none">
+                            <use xlink:href="../img/sprite.svg#copy"></use>
+                        </svg>
+                    </button>
+                </li>
+
+                <li class="popup__item">
+                    <div class="popup__item-wrap">
+                        <h4 class="popup__item-title">BTC (TRC20)</h4>
+                        <p class="popup__item-code">TJ82BNPzQY9UNf15S39RzPZnSYQAWqH9qJ</p>
+                    </div>
+                    <button class="popup__item-btn">
+                        <svg class="popup__item-icon" width="19" height="21" fill="none">
+                            <use xlink:href="../img/sprite.svg#copy"></use>
+                        </svg>
+                    </button>
+                </li>
+
+                <li class="popup__item">
+                    <div class="popup__item-wrap">
+                        <h4 class="popup__item-title">ETH (ERC20)</h4>
+                        <p class="popup__item-code">0xb26c5a2cf2ed8422fa24c68412e87a09b7d8d58a</p>
+                    </div>
+                    <button class="popup__item-btn">
+                        <svg class="popup__item-icon" width="19" height="21" fill="none">
+                            <use xlink:href="../img/sprite.svg#copy"></use>
+                        </svg>
+                    </button>
+                </li>
+
+                <li class="popup__item">
+                    <div class="popup__item-wrap">
+                        <h4 class="popup__item-title">USDT (TRC20)</h4>
+                        <p class="popup__item-code">TWPepJgichC1Hxf7L7ah5FkxUqcL1Ck24v</p>
+                    </div>
+                    <button class="popup__item-btn">
+                        <svg class="popup__item-icon" width="19" height="21" fill="none">
+                            <use xlink:href="../img/sprite.svg#copy"></use>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="popup" >
+        <div class="popup__container">
+            <button class="popup__close">
+                <svg class="popup__icon" width="10" height="10" fill="none">
+                    <use xlink:href="../img/sprite.svg#close"></use>
+                </svg>
+            </button>
+
+            <h2 class="popup__title">
+                Crypto wallet numbers
+            </h2>
+
+            <form action="#" class="popup__form">
+                <div class="popup__form-wrap">
+                    <ul class="popup__form-list">
+                        <li class="popup__form-item">
+                            <label class="visually-hidden" for="fname"></label>
+                            <span class="popup__form-error">Error text</span>
+                            <input type="text" id="fname" class="popup__form-input" placeholder="Enter your first name"
+                                   autocomplete="off">
+                        </li>
+
+                        <li class="popup__form-item">
+                            <label class="visually-hidden" for="lname"></label>
+                            <input type="text" id="lname" class="popup__form-input" placeholder="Enter your last name"
+                                   autocomplete="off">
+                        </li>
+
+                        <li class="popup__form-item">
+                            <label class="visually-hidden" for="tel"></label>
+                            <input type="tel" id="tel" class="popup__form-input" placeholder="Enter your phone number"
+                                   autocomplete="off">
+                        </li>
+
+                        <li class="popup__form-item">
+                            <label class="visually-hidden" for="email"></label>
+                            <input type="email" id="email" class="popup__form-input" placeholder="Enter your email"
+                                   autocomplete="off">
+                        </li>
+                    </ul>
+                </div>
+                <div class="popup__form-wrap">
+                    <!--                    <span class="popup__form-error popup__form-error&#45;&#45;textarea">Error text</span>-->
+                    <textarea class="popup__form-textarea" placeholder="Enter your message"></textarea>
+                </div>
+                <div class="popup__form-wrap">
+                    <label for="checkbox" class="popup__form-checkbox">
+                        <input type="checkbox" id="checkbox" class="popup__form-checkbox-input">
+                        <span class="popup__form-checkbox-check"></span>
+                        <a href="#" class="popup__form-checkbox-link">I agree with the privacy policy</a>
+                    </label>
+                </div>
+                <div class="popup__form-wrap">
+                    <button class="popup__form-btn">
+                        Send
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</footer>
+<script src="./js/script.js"></script>
+</body>
+</html>

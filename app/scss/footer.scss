@@ -1,0 +1,27 @@
+.footer{
+  padding: 30px 0;
+  border-top: 1px solid #B6B3B3;
+  &__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media(min-width: 768px){
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &__date{
+    font-family: "Inter",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #B6B3B3;
+    margin-top: 20px;
+    @media(min-width: 768px){
+      margin-top: 0;
+    }
+  }
+}
