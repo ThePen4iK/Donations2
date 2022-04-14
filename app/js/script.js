@@ -222,27 +222,50 @@ document.addEventListener("DOMContentLoaded", function () {
     let btnLanguage = document.querySelector(".header__language");
     let listLanguage = document.querySelector(".header__language-list");
     let itemsLang = document.querySelectorAll(".header__language-link");
+    let enBtn = document.querySelector(".header__language-link.en-lang--header");
+
+    let uaBtn = document.querySelector(".header__language-link.ua-lang--header");
 
     btnLanguage.addEventListener("click", (e) => {
-        let newDateBtn = e.target.dataset.attr;
-        listLanguage.classList.add("header__language-list--active");
-        itemsLang.forEach((item) => {
-            item.addEventListener("click", (e, i) => {
-                item[i] = e.target.dataset.lang;
-                btnLanguage.removeAttribute('data-attr');
-                btnLanguage.setAttribute('data-attr', item[i]);
-                let span = document.querySelector(".header__language-btn");
-                span.innerHTML = item[i];
-                if(listLanguage.classList.contains("header__language-list--active")){
-                    listLanguage.addEventListener("click",()=>{
-                        console.log(432)
-                        listLanguage.classList.remove("header__language-list--active");
+        if (listLanguage.classList.contains("hide")) {
+            listLanguage.classList.remove("hide");
+            listLanguage.classList.add("show");
+        } else {
+            listLanguage.classList.remove("show");
+            listLanguage.classList.add("hide");
+        }
+
+    })
+    itemsLang.forEach((item) => {
+        item.addEventListener("click", (e, i) => {
+            item[i] = e.target.dataset.lang;
+
+            btnLanguage.setAttribute('data-attr', item[i]);
+            let span = document.querySelector(".header__language-btn");
+            let newVar = span.innerHTML = item[i];
+            console.log(newVar, "ne")
+            let uaText = document.querySelectorAll(".ua-lang");
+            let enText = document.querySelectorAll(".en-lang");
+            if (newVar === 'EN') {
+                enText.forEach((item, i) => {
+                    item.style.position = "static";
+                    uaText.forEach((item) => {
+                        item.style.position = "absolute";
+                        item.style.top = "-9999px";
+                        item.style.left = "-9999px";
                     })
-                }
-            })
+                })
+            } else if (newVar === 'UA') {
+                uaText.forEach((item)=>{
+                    item.style.position = "static";
+                    enText.forEach((item)=>{
+                        item.style.position = "absolute";
+                        item.style.top = "-9999px";
+                        item.style.left = "-9999px";
+                    })
+                })
+            }
         })
-
-
     })
 
 
