@@ -6,22 +6,26 @@ document.addEventListener("DOMContentLoaded", function () {
         menuitem = document.querySelectorAll(".menu__item"),
         headerBtn = document.querySelector(".btn__header"),
         menuFlag = false,
-        startScreen = document.querySelector('.js-start');
+        startScreen = document.querySelector('.js-start'),
+        hederHeight = header.offsetHeight,
+        body = document.body;
 
 
+    window.onscroll = function () {
+        fixed();
+    }
 
-    // window.onscroll = function () {
-    //     fixed();
-    // }
+    function fixed() {
+        //&& window.pageYOffset >= headerFixed
+        if (window.scrollY > 0) {
+            header.classList.add("header__fixed");
+            body.style.paddingTop = hederHeight + 'px';
+        } else {
+            header.classList.remove("header__fixed");
+            body.style.paddingTop = 0;
 
-    // function fixed() {
-    //     //&& window.pageYOffset >= headerFixed
-    //     if (window.scrollY > 0) {
-    //         header.classList.add("header__fixed");
-    //     } else {
-    //         header.classList.remove("header__fixed");
-    //     }
-    // }
+        }
+    }
 
 
     if (burger) {
@@ -84,7 +88,164 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     })
-    console.log("DOM fully loaded and parsed");
+
+    let popup = document.querySelectorAll(".popup");
+    let popupContact = document.querySelector(".js-popup-contact");
+    let contactBtn = document.querySelectorAll(".js-contact");
+    let overlay = document.querySelector(".overlay");
+    let popupClose = document.querySelectorAll(".popup__close");
+    let popupSend = document.querySelector(".popup__btn");
+    let fieldInput = document.querySelectorAll(".popup__form-input");
+    let fieldTextarea = document.querySelectorAll(".popup__form-textarea");
+    let popupThanks = document.querySelector(".js-popup-thanks");
+    let popupCrypto = document.querySelector(".js-popup-crypto");
+    let btnThanks = document.querySelector(".popup__btn--thank");
+    let btnCrypto = document.querySelector(".js-crypto-btn");
+
+
+    contactBtn.forEach((item, i) => {
+        item.addEventListener("click", () => {
+            popupContact.classList.add("popup__show");
+            overlay.classList.add("active-overlay");
+            rootElement.classList.add("block");
+
+
+            popupSend.addEventListener("click", (e) => {
+                e.preventDefault();
+                fieldInput.forEach((item) => {
+                    if (item.value !== '') {
+                        popupThanks.classList.add("popup__show");
+                        overlay.classList.add("active-overlay");
+                        rootElement.classList.add("block");
+                    }
+                    if (popupThanks) {
+                        btnThanks.addEventListener("click", () => {
+                            popup.forEach((item) => {
+                                item.classList.remove("popup__show");
+                                overlay.classList.remove("active-overlay");
+                                rootElement.classList.remove("block");
+                            })
+                        })
+                    }
+                })
+            })
+
+        })
+    })
+    btnCrypto.addEventListener("click", () => {
+        popupCrypto.classList.add("popup__show");
+        overlay.classList.add("active-overlay");
+        rootElement.classList.add("block");
+    })
+    popupClose.forEach((item) => {
+        item.addEventListener("click", () => {
+
+            popup.forEach((item) => {
+                item.classList.remove("popup__show");
+                overlay.classList.remove("active-overlay");
+                rootElement.classList.remove("block");
+            })
+        })
+    })
+    document.body.addEventListener('keyup', function (e) {
+        var key = e.keyCode;
+
+        if (key == 27) {
+            popupContact.classList.remove("popup__show");
+            overlay.classList.remove("active-overlay");
+            rootElement.classList.remove("block");
+
+        }
+        ;
+    }, false);
+    window.addEventListener("click", (e) => {
+        let target = e.target;
+        if (target.classList.contains("overlay")) {
+            popup.forEach((item) => {
+                item.classList.remove("popup__show");
+                overlay.classList.remove("active-overlay");
+                rootElement.classList.remove("block");
+            })
+        }
+    })
+
+    window.scrollSmooth = (container = document) => {
+        const hrefAttributes = container.querySelectorAll("a[href*='#']");
+        hrefAttributes.forEach((item) => {
+            const href = item.href.split('#');
+
+            const CURRENT_URL = window.location.origin + window.location.pathname;
+
+            if (href[0] === CURRENT_URL) {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    const scrollTarget = document.getElementById(href[1]);
+
+                    const topOffset = 175;
+                    const elementPosition = scrollTarget.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition - topOffset;
+
+                    window.scrollBy({
+                        top: offsetPosition,
+                        behavior: 'smooth',
+                    });
+                });
+            }
+        });
+    };
+
+    window.scrollSmooth();
+
+
+    /* copy */
+
+    let copyText = document.querySelectorAll(".popup__item");
+
+    copyText.forEach((item) => {
+        item.querySelector(".popup__item-btn").addEventListener("click", () => {
+            let input = item.querySelector(" .popup__item-copy");
+            input.select();
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+            if (window.screen.availWidth > 576) {
+                document.querySelector(".popup__copy").style.display = "flex";
+                setTimeout(function () {
+                    document.querySelector(".popup__copy").style.display = "none";
+                }, 2500);
+            }
+
+        })
+    })
+
+
+    let btnLanguage = document.querySelector(".header__language");
+    let listLanguage = document.querySelector(".header__language-list");
+    let itemsLang = document.querySelectorAll(".header__language-link");
+
+    btnLanguage.addEventListener("click", (e) => {
+        let newDateBtn = e.target.dataset.attr;
+        listLanguage.classList.add("header__language-list--active");
+        itemsLang.forEach((item) => {
+            item.addEventListener("click", (e, i) => {
+                item[i] = e.target.dataset.lang;
+                btnLanguage.removeAttribute('data-attr');
+                btnLanguage.setAttribute('data-attr', item[i]);
+                let span = document.querySelector(".header__language-btn");
+                span.innerHTML = item[i];
+                if(listLanguage.classList.contains("header__language-list--active")){
+                    listLanguage.addEventListener("click",()=>{
+                        console.log(432)
+                        listLanguage.classList.remove("header__language-list--active");
+                    })
+                }
+            })
+        })
+
+
+    })
+
+
 })
 document.addEventListener("DOMContentLoaded",(function(){console.log("DOM fully loaded and parsed")}));
 /**

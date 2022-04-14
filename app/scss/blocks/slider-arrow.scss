@@ -7,4 +7,14 @@
   &__next {
     cursor: pointer;
   }
+  &__icon{
+    color: #1362E1;
+    transition: all 0.5s ease-in-out;
+    @media(any-hover: hover){
+      &:hover{
+        transition: all 0.5s ease-in-out;
+        color: #263B80;
+      }
+    }
+  }
 }
