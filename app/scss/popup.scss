@@ -6,12 +6,29 @@
 
   width: 100%;
   max-width: 730px;
-  height: auto;
+  height: 800px;
   padding: 0 15px;
 
+  overflow: auto;
+  scrollbar-width: none;
 
   z-index: 20;
   visibility: hidden;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+  @media(max-width: 576px){
+    padding: 30px 15px;
+
+    top: calc(50% + 80px);
+    margin-bottom: 20px;
+  }
+  &--mod {
+
+
+
+
+  }
 
   &__close {
     width: 30px;
@@ -26,7 +43,9 @@
 
     color: #1362E1;
 
-
+    @media(max-width: 576px){
+      top: 50px;
+    }
     @media(any-hover: hover) {
       &:hover {
         color: #263B80;
@@ -59,6 +78,7 @@
 
     &--mod {
       max-width: 452px;
+
     }
 
     &--thank {
