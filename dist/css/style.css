@@ -1111,7 +1111,7 @@ img {
 }
 @media (max-width: 576px) {
   .popup {
-    padding: 30px 15px;
+    padding: 30px 15px 100px;
     top: calc(50% + 80px);
     margin-bottom: 20px;
   }
