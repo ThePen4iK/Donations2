@@ -929,10 +929,16 @@ img {
   }
 }
 .gear__img {
+  margin-top: 10px;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 15px;
+}
+@media (min-width: 768px) {
+  .gear__img {
+    margin-top: 0;
+  }
 }
 
 .help {

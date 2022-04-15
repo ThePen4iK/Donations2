@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let burger = document.querySelector(".hamburger"),
         header = document.querySelector(".header"),
-        menuitem = document.querySelectorAll(".menu__item"),
+        menuitem = document.querySelectorAll(".navigation__link"),
         headerBtn = document.querySelector(".btn__header"),
         menuFlag = false,
         startScreen = document.querySelector('.js-start'),
