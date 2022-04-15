@@ -17,6 +17,9 @@
     letter-spacing: 0em;
     text-align: left;
     color: #393737;
+    @media(min-width: 992px){
+      margin: 0;
+    }
   }
   &__img{
     width: 100%;

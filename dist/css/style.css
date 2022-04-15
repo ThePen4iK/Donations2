@@ -577,6 +577,11 @@ img {
   text-align: left;
   color: #393737;
 }
+@media (min-width: 992px) {
+  .start__text {
+    margin: 0;
+  }
+}
 .start__img {
   width: 100%;
 }
@@ -916,6 +921,7 @@ img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 15px;
 }
 
 .help {
@@ -1176,7 +1182,7 @@ img {
   }
 }
 .popup__title--mod {
-  max-width: 452px;
+  max-width: 554px;
 }
 .popup__title--thank {
   text-align: center;
