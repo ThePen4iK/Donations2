@@ -763,7 +763,7 @@ img {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background: url("../img/video-btn.jpg") no-repeat;
+  background: url("/img/video-btn.jpg") no-repeat;
   border-radius: 50%;
 }
 .gallery__img {
@@ -1452,10 +1452,19 @@ img {
   width: 100%;
   max-width: 305px;
   height: 67px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #393737;
 }
 @media (min-width: 768px) {
   .popup__form-input {
     height: 69px;
+    font-size: 16px;
+    line-height: 19px;
   }
 }
 @media (any-hover: hover) {
@@ -1547,11 +1556,20 @@ img {
   height: 291px;
   margin-top: 15px;
   margin-bottom: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #393737;
 }
 @media (min-width: 768px) {
   .popup__form-textarea {
     max-width: 630px;
     height: 166px;
+    font-size: 16px;
+    line-height: 19px;
   }
 }
 @media (any-hover: hover) {

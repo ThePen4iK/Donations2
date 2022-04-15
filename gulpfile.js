@@ -39,7 +39,7 @@ const gulp = require("gulp");
 const scss = require("gulp-sass")(require("sass"));
 const concat = require("gulp-concat");
 const browsersync = require("browser-sync").create();
-const uglify = require("gulp-uglify-es").default;
+// const uglify = require("gulp-uglify-es").default;
 const autoprefixer = require("gulp-autoprefixer");
 const imagemin = require("gulp-imagemin");
 const del = require("del");
@@ -102,7 +102,7 @@ function scripts() {
         .pipe(concat("script.js"))
         .pipe(dest(path.build.js))
 
-        .pipe(uglify())
+        // .pipe(uglify())
 
         .pipe(rename({
             suffix: ".min"

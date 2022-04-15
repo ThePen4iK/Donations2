@@ -110,21 +110,20 @@ document.addEventListener("DOMContentLoaded", function () {
             rootElement.classList.add("block");
 
 
-            popupSend.addEventListener("click",  async(e) => {
+            popupSend?.addEventListener("click", async (e) => {
                 e.preventDefault();
 
-                let  form = document.getElementById("form");
+                let form = document.getElementById("form");
                 let formData = new FormData(form);
-
-                const response = await fetch('../php/sendemail.php',{
+                const response = await fetch('/php/sendemail.php', {
                     method: "POST",
                     body: formData
                 });
-                if(response.ok){
+                if (response.ok) {
                     let result = await response.json();
-                    alert(result.message);
+                    console.log(result.message);
                     form.reset()
-                }else{
+                } else {
                     console.log("error")
                 }
 
@@ -144,8 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         })
                     }
                 })
-
-
 
 
             })
@@ -256,7 +253,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     })
-    itemsLang.forEach((item     ) => {
+    itemsLang.forEach((item) => {
         item.addEventListener("click", (e, i) => {
             item[i] = e.target.dataset.lang;
 
@@ -276,9 +273,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     })
                 })
             } else if (newVar === 'UA') {
-                uaText.forEach((item)=>{
+                uaText.forEach((item) => {
                     item.style.position = "static";
-                    enText.forEach((item)=>{
+                    enText.forEach((item) => {
                         item.style.position = "absolute";
                         item.style.top = "-9999px";
                         item.style.left = "-9999px";
