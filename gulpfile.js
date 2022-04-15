@@ -9,6 +9,8 @@ const path = {
         img: project_folder + "/img/",
         fonts: project_folder + "/fonts/",
         video: project_folder + "/video/",
+        php: project_folder + "/php/",
+        libs: project_folder + "/libs/",
     },
     src: {
         html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"],
@@ -17,7 +19,8 @@ const path = {
         img: source_folder + "/img/**/*.+(png|jpg|gif|ico|svg|webp|mp4)",
         fonts: source_folder + "/fonts/**/*.*",
         video: source_folder + "/video/**/*.*",
-        php: "/*.php",
+        php: source_folder + "/php/**/*.php",
+        libs: source_folder + "/libs/**",
     },
     watch: {
         html: source_folder + "/**/*.html",
@@ -26,7 +29,8 @@ const path = {
         img: source_folder + "/img/**/*.+(png|jpg|gif|ico|svg|webp|mp4)",
         fonts: source_folder + "/fonts/**/*.*",
         video: source_folder + "/video/**/*.*",
-        php: source_folder + "/**/*.php",
+        php: source_folder + "/php/**/*.php",
+        libs: source_folder + "/libs/**",
     },
     clean: "./" + project_folder + "/",
 };
@@ -60,12 +64,7 @@ function html() {
         .pipe(dest(path.build.html))
         .pipe(browsersync.stream());
 }
-function php(){
-    return src(path.src.php)
-        .pipe(fileinclude())
-        .pipe(dest(path.build.html))
-        .pipe(browsersync.stream())
-}
+
 // Конвертирование стилей в css - gulp styles
 function styles() {
     return src(path.src.css)
@@ -112,12 +111,7 @@ function scripts() {
         .pipe(dest(path.build.js))
         .pipe(browsersync.stream());
 }
-function php(){
-    return src(path.src.php)
-        .pipe(fileinclude())
-        .pipe(dest(path.build.html))
-        .pipe(browsersync.stream())
-}
+
 
 // Для сжатия картинок - gulp img
 function images() {
@@ -140,6 +134,12 @@ function fonts() {
 }
 function video() {
     return src(path.src.video).pipe(dest(path.build.video));
+}
+function php() {
+    return src(path.src.php).pipe(dest(path.build.php));
+}
+function libs() {
+    return src(path.src.libs).pipe(dest(path.build.libs));
 }
 
 function clean() {
@@ -168,12 +168,13 @@ function watchFiles() {
     gulp.watch([path.watch.fonts], fonts);
     gulp.watch([path.watch.video], video);
     gulp.watch([path.watch.php], php);
+    gulp.watch([path.watch.libs], libs);
 
 }
 
 const build = gulp.series(
     clean,
-    gulp.parallel(styles, html, php,  scripts, images, fonts, video)
+    gulp.parallel(styles, html, php,  scripts, images, fonts, video, libs)
 );
 const watch = gulp.parallel(build, watchFiles, browserSync);
 
@@ -183,6 +184,7 @@ exports.images = images;
 exports.scripts = scripts;
 exports.styles = styles;
 exports.php = php;
+exports.libs = libs;
 exports.html = html;
 exports.build = build;
 exports.watch = watch;
