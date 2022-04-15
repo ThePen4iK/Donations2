@@ -178,7 +178,7 @@
                         <span class="gallery__decor"></span>
                         <video loop playsinline class="gallery__slide-video"
                         >
-                            <source src="../img/video/video-1.mp4" type="video/mp4"/>
+                            <source src="../video/video-1.mp4" type="video/mp4"/>
                         </video>
                     </div>
                 </div>
@@ -238,7 +238,7 @@
                         <span class="gallery__decor"></span>
                         <video loop playsinline class="gallery__slide-video"
                         >
-                            <source src="../img/video/video-2.mp4" type="video/mp4"/>
+                            <source src="../video/video-2.mp4" type="video/mp4"/>
                         </video>
                     </div>
                 </div>
@@ -432,6 +432,39 @@
                         <img class="gallery__img" src="../img/gallery-24.jpg" alt="gallery">
                     </picture>
                 </div>
+
+                <div class="swiper-slide gallery__slide">
+                    <picture class="picture">
+                        <source
+                                media="(min-width: 600px)"
+                                srcset="../img/gallery-desck-25.jpg"
+                        />
+                        <img class="gallery__img" src="../img/gallery-25.jpg" alt="gallery">
+                    </picture>
+                </div>
+
+
+                <div class="swiper-slide gallery__slide">
+                    <picture class="picture">
+                        <source
+                                media="(min-width: 600px)"
+                                srcset="../img/gallery-desck-26.jpg"
+                        />
+                        <img class="gallery__img" src="../img/gallery-26.jpg" alt="gallery">
+                    </picture>
+                </div>
+
+
+                <div class="swiper-slide gallery__slide">
+                    <picture class="picture">
+                        <source
+                                media="(min-width: 600px)"
+                                srcset="../img/gallery-desck-27.jpg"
+                        />
+                        <img class="gallery__img" src="../img/gallery-27.jpg" alt="gallery">
+                    </picture>
+                </div>
+
             </div>
         </div>
 
@@ -446,11 +479,12 @@
                     Tactical gear
                 </h2>
 
-                <p class="gear__text gear__text--mod">We are Vadym’s friends in the USA. We collect small donations of tactical gear
+                <p class="gear__text gear__text--mod">We are Vadym's friends from Kharkiv in the USA. We collect small donations of tactical gear
                     from individuals and ship them to Ukraine. There is no donation too small - all are important! If
                     you have a larger donation or equipment that requires special export licenses, we can match you with
                     the appropriate non-profit organization in your area.
-                   <button  class="gear__btn js-contact">Contact us</button>  </p>
+                    <button class="gear__btn js-contact">Contact us</button>
+                </p>
 
                 <h3 class="gear__subtitle">
                     Suggested Highest Priority items:
@@ -487,7 +521,7 @@
             Help refugee families and more
         </h2>
         <div class="help__content">
-            <p class="help__text">We help refugee families with cancer patients, mostly from Kharkiv, find appropriate
+            <p class="help__text">We also help refugee families with cancer patients, mostly from Kharkiv, find appropriate
                 hospitals in Europe, and book temporary housing on the way. </p>
 
             <p class="help__text">Your money will go only to Ukrainian causes. Please <button class="help__btn js-contact">contact
@@ -502,10 +536,10 @@
     <section class="section support" id="support">
     <div class="container">
         <div class="support__wrapper">
-        <h2 class="support__title">
-            Support us with
-            a donation
-        </h2>
+            <h2 class="support__title">
+                Support us with
+                a donation
+            </h2>
             <ul class="support__list">
                 <li class="support__item">
                     <a href="https://gofund.me/358eb858" class="support__btn">
@@ -517,22 +551,27 @@
                 </li>
 
                 <li class="support__item">
-                    <button class="support__btn">
+                    <a href="https://www.paypal.com/donate/?hosted_button_id=7A6YE69XY59MC" class="support__btn">
                         <svg class="support__icon" width="158" height="40" fill="none">
                             <use xlink:href="../img/sprite.svg#paypal"></use>
                         </svg>
-                    </button>
+                    </a>
                 </li>
 
                 <li class="support__item">
                     <button class="support__btn js-crypto-btn">
                         Crypto
-                        <svg class="support__icon" width="37" height="37"  fill="none">
+                        <svg class="support__icon" width="37" height="37" fill="none">
                             <use xlink:href="../img/sprite.svg#crypto"></use>
                         </svg>
                     </button>
                 </li>
             </ul>
+            <p class="support__text">
+                If you would like to make a tax deductible donation via registered 501c3 NGO with a receipt, please make
+                you
+                donation to our partners at <a href="AFGfree.org" class="support__link">AFGfree.org</a> , and add a note Kharkiv/Vadym:
+                there will be a “Write a note” field on the payment page</p>
         </div>
     </div>
 </section>
@@ -555,7 +594,7 @@
     </div>
 
     <div class="overlay js-overlay-modal"></div>
-    <div class="popup js-popup-crypto">
+    <div class="popup popup--mod js-popup-crypto">
         <div class="popup__container">
             <button class="popup__close">
                 <svg class="popup__icon" width="10" height="10" fill="none">
@@ -656,42 +695,47 @@
                 I want to help from outside of Ukraine
             </h2>
 
-            <form action="#" class="popup__form">
+            <form action="#" class="popup__form" id="form">
                 <div class="popup__form-wrap">
                     <ul class="popup__form-list">
                         <li class="popup__form-item">
                             <label class="visually-hidden" for="fname"></label>
 <!--                            <span class="popup__form-error">Error text</span>-->
-                            <input type="text" id="fname" class="popup__form-input" placeholder="Enter your first name"
+                            <input type="text" id="fname" class="popup__form-input _req"
+                                   placeholder="Enter your first name"
                                    autocomplete="off">
                         </li>
 
                         <li class="popup__form-item">
                             <label class="visually-hidden" for="lname"></label>
-                            <input type="text" id="lname" class="popup__form-input" placeholder="Enter your last name"
+
+                            <input type="text" id="lname" class="popup__form-input _req"
+                                   placeholder="Enter your last name"
                                    autocomplete="off">
                         </li>
 
                         <li class="popup__form-item">
                             <label class="visually-hidden" for="tel"></label>
+
                             <input type="tel" id="tel" class="popup__form-input" placeholder="Enter your phone number"
                                    autocomplete="off">
                         </li>
 
                         <li class="popup__form-item">
                             <label class="visually-hidden" for="email"></label>
-                            <input type="email" id="email" class="popup__form-input" placeholder="Enter your email"
+
+                            <input type="email" id="email" class="popup__form-input _req _email" placeholder="Enter your email"
                                    autocomplete="off">
                         </li>
                     </ul>
                 </div>
                 <div class="popup__form-wrap">
-                    <!--                    <span class="popup__form-error popup__form-error&#45;&#45;textarea">Error text</span>-->
+<!--                    <span class="popup__form-error popup__form-error&#45;&#45;textarea">Error text</span>-->
                     <textarea class="popup__form-textarea" placeholder="Enter your message"></textarea>
                 </div>
                 <div class="popup__form-wrap">
                     <label for="checkbox" class="popup__form-checkbox">
-                        <input type="checkbox" id="checkbox" class="popup__form-checkbox-input">
+                        <input type="checkbox" id="checkbox" class="popup__form-checkbox-input _req">
                         <span class="popup__form-checkbox-check"></span>
                         <a href="#" class="popup__form-checkbox-link">I agree with the privacy policy</a>
                     </label>

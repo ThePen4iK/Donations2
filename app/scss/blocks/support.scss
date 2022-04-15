@@ -91,4 +91,29 @@
   &__icon {
     margin-left: 15px;
   }
+
+  &__text{
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+
+    color: #ffffff;
+    width: 100%;
+    max-width: 826px;
+    margin-top: 25px;
+  }
+
+  &__link{
+    font-family: "Inter",sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+  }
 }

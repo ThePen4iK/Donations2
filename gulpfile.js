@@ -2,30 +2,35 @@ const project_folder = "dist";
 const source_folder = "app";
 
 const path = {
-  build: {
-    html: project_folder + "/",
-    css: project_folder + "/css/",
-    js: project_folder + "/js/",
-    img: project_folder + "/img/",
-    fonts: project_folder + "/fonts/",
-  },
-  src: {
-    html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"],
-    css: source_folder + "/scss/style.scss",
-    js: source_folder + "/js/*.js",
-    img: source_folder + "/img/**/*.+(png|jpg|gif|ico|svg|webp|mp4)",
-    fonts: source_folder + "/fonts/**/*.*",
-  },
-  watch: {
-    html: source_folder + "/**/*.html",
-    css: source_folder + "/scss/**/*.scss",
-    js: source_folder + "/js/**/*.js",
-    img: source_folder + "/img/**/*.+(png|jpg|gif|ico|svg|webp|mp4)",
-    fonts: source_folder + "/fonts/**/*.*",
-  },
-  clean: "./" + project_folder + "/",
+    build: {
+        html: project_folder + "/",
+        css: project_folder + "/css/",
+        js: project_folder + "/js/",
+        img: project_folder + "/img/",
+        fonts: project_folder + "/fonts/",
+        video: project_folder + "/video/",
+    },
+    src: {
+        html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"],
+        css: source_folder + "/scss/style.scss",
+        js: source_folder + "/js/*.js",
+        img: source_folder + "/img/**/*.+(png|jpg|gif|ico|svg|webp|mp4)",
+        fonts: source_folder + "/fonts/**/*.*",
+        video: source_folder + "/video/**/*.*",
+        php: "/*.php",
+    },
+    watch: {
+        html: source_folder + "/**/*.html",
+        css: source_folder + "/scss/**/*.scss",
+        js: source_folder + "/js/**/*.js",
+        img: source_folder + "/img/**/*.+(png|jpg|gif|ico|svg|webp|mp4)",
+        fonts: source_folder + "/fonts/**/*.*",
+        video: source_folder + "/video/**/*.*",
+        php: source_folder + "/**/*.php",
+    },
+    clean: "./" + project_folder + "/",
 };
-const { src, dest, parallel } = require("gulp");
+const {src, dest, parallel} = require("gulp");
 const gulp = require("gulp");
 const scss = require("gulp-sass")(require("sass"));
 const concat = require("gulp-concat");
@@ -40,88 +45,105 @@ const fileinclude = require("gulp-file-include");
 
 // Сервер - gulp browsersync
 function browserSync() {
-  browsersync.init({
-    server: {
-      baseDir: "./" + project_folder + "/",
-    },
-    port: 3000,
-    notify: false,
-  });
+    browsersync.init({
+        server: {
+            baseDir: "./" + project_folder + "/",
+        },
+        port: 3000,
+        notify: false,
+    });
 }
 
 function html() {
-  return src(path.src.html)
-      .pipe(fileinclude())
-      .pipe(dest(path.build.html))
-      .pipe(browsersync.stream());
+    return src(path.src.html)
+        .pipe(fileinclude())
+        .pipe(dest(path.build.html))
+        .pipe(browsersync.stream());
+}
+function php(){
+    return src(path.src.php)
+        .pipe(fileinclude())
+        .pipe(dest(path.build.html))
+        .pipe(browsersync.stream())
 }
 // Конвертирование стилей в css - gulp styles
 function styles() {
-  return src(path.src.css)
-      .pipe(
-          scss({
-            outputStyle: "expanded",
-          })
-      )
-      .pipe(
-          autoprefixer({
-            overrideBrowserslist: ["last 10 versions"],
-            cascade: true,
-            grid: true,
-          })
-      )
-      .pipe(dest(path.build.css))
-      .pipe(cleanCss())
-      .pipe(
-          rename({
-            extname: ".min.css",
-          })
-      )
-      .pipe(dest(path.build.css))
-      .pipe(browsersync.stream());
+    return src(path.src.css)
+        .pipe(
+            scss({
+                outputStyle: "expanded",
+            })
+        )
+        .pipe(
+            autoprefixer({
+                overrideBrowserslist: ["last 10 versions"],
+                cascade: true,
+                grid: true,
+            })
+        )
+        .pipe(dest(path.build.css))
+        .pipe(cleanCss())
+        .pipe(
+            rename({
+                extname: ".min.css",
+            })
+        )
+        .pipe(dest(path.build.css))
+        .pipe(browsersync.stream());
 }
+
 // Объединение js файлов и их минифицирование
 function scripts() {
-  return src([
-    // 'node_modules/jquery/dist/jquery.js',
-    path.src.js,
-  ])
-      .pipe(fileinclude())
+    return src([
+        // 'node_modules/jquery/dist/jquery.js',
+        path.src.js,
+    ])
+        .pipe(fileinclude())
 
-      .pipe(concat("script.js"))
-      .pipe(dest(path.build.js))
+        .pipe(concat("script.js"))
+        .pipe(dest(path.build.js))
 
-      .pipe(uglify())
+        .pipe(uglify())
 
-      .pipe(rename({
-        suffix: ".min"
-      }))
+        .pipe(rename({
+            suffix: ".min"
+        }))
 
-      .pipe(dest(path.build.js))
-      .pipe(browsersync.stream());
+        .pipe(dest(path.build.js))
+        .pipe(browsersync.stream());
 }
+function php(){
+    return src(path.src.php)
+        .pipe(fileinclude())
+        .pipe(dest(path.build.html))
+        .pipe(browsersync.stream())
+}
+
 // Для сжатия картинок - gulp img
 function images() {
-  return src(path.src.img)
-      .pipe(
-          imagemin([
-            imagemin.gifsicle({ interlaced: true }),
-            imagemin.mozjpeg({ quality: 75, progressive: true }),
-            imagemin.optipng({ optimizationLevel: 5 }),
-            imagemin.svgo({
-              plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
-            }),
-          ])
-      )
-      .pipe(dest(path.build.img));
+    return src(path.src.img)
+        .pipe(
+            imagemin([
+                imagemin.gifsicle({interlaced: true}),
+                imagemin.mozjpeg({quality: 75, progressive: true}),
+                imagemin.optipng({optimizationLevel: 5}),
+                imagemin.svgo({
+                    plugins: [{removeViewBox: true}, {cleanupIDs: false}],
+                }),
+            ])
+        )
+        .pipe(dest(path.build.img));
 }
 
 function fonts() {
-  return src(path.src.fonts).pipe(dest(path.build.fonts));
+    return src(path.src.fonts).pipe(dest(path.build.fonts));
+}
+function video() {
+    return src(path.src.video).pipe(dest(path.build.video));
 }
 
 function clean() {
-  return del(path.clean);
+    return del(path.clean);
 }
 
 // Для билда проекта - gulp build
@@ -139,23 +161,28 @@ function clean() {
 
 // Следим за всеми подпапками и файлами - gulp watchFiles
 function watchFiles() {
-  gulp.watch([path.watch.html], html);
-  gulp.watch([path.watch.css], styles);
-  gulp.watch([path.watch.js], scripts);
-  gulp.watch([path.watch.img], images);
-  gulp.watch([path.watch.fonts], fonts);
+    gulp.watch([path.watch.html], html);
+    gulp.watch([path.watch.css], styles);
+    gulp.watch([path.watch.js], scripts);
+    gulp.watch([path.watch.img], images);
+    gulp.watch([path.watch.fonts], fonts);
+    gulp.watch([path.watch.video], video);
+    gulp.watch([path.watch.php], php);
+
 }
 
 const build = gulp.series(
     clean,
-    gulp.parallel(styles, html, scripts, images, fonts)
+    gulp.parallel(styles, html, php,  scripts, images, fonts, video)
 );
 const watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.fonts = fonts;
+exports.video = video;
 exports.images = images;
 exports.scripts = scripts;
 exports.styles = styles;
+exports.php = php;
 exports.html = html;
 exports.build = build;
 exports.watch = watch;

@@ -16,7 +16,7 @@
     </div>
 
     <div class="overlay js-overlay-modal"></div>
-    <div class="popup js-popup-crypto">
+    <div class="popup popup--mod js-popup-crypto">
         <div class="popup__container">
             <button class="popup__close">
                 <svg class="popup__icon" width="10" height="10" fill="none">
@@ -117,42 +117,47 @@
                 I want to help from outside of Ukraine
             </h2>
 
-            <form action="#" class="popup__form">
+            <form action="#" class="popup__form" id="form">
                 <div class="popup__form-wrap">
                     <ul class="popup__form-list">
                         <li class="popup__form-item">
                             <label class="visually-hidden" for="fname"></label>
 <!--                            <span class="popup__form-error">Error text</span>-->
-                            <input type="text" id="fname" class="popup__form-input" placeholder="Enter your first name"
+                            <input type="text" id="fname" class="popup__form-input _req"
+                                   placeholder="Enter your first name"
                                    autocomplete="off">
                         </li>
 
                         <li class="popup__form-item">
                             <label class="visually-hidden" for="lname"></label>
-                            <input type="text" id="lname" class="popup__form-input" placeholder="Enter your last name"
+
+                            <input type="text" id="lname" class="popup__form-input _req"
+                                   placeholder="Enter your last name"
                                    autocomplete="off">
                         </li>
 
                         <li class="popup__form-item">
                             <label class="visually-hidden" for="tel"></label>
+
                             <input type="tel" id="tel" class="popup__form-input" placeholder="Enter your phone number"
                                    autocomplete="off">
                         </li>
 
                         <li class="popup__form-item">
                             <label class="visually-hidden" for="email"></label>
-                            <input type="email" id="email" class="popup__form-input" placeholder="Enter your email"
+
+                            <input type="email" id="email" class="popup__form-input _req _email" placeholder="Enter your email"
                                    autocomplete="off">
                         </li>
                     </ul>
                 </div>
                 <div class="popup__form-wrap">
-                    <!--                    <span class="popup__form-error popup__form-error&#45;&#45;textarea">Error text</span>-->
+<!--                    <span class="popup__form-error popup__form-error&#45;&#45;textarea">Error text</span>-->
                     <textarea class="popup__form-textarea" placeholder="Enter your message"></textarea>
                 </div>
                 <div class="popup__form-wrap">
                     <label for="checkbox" class="popup__form-checkbox">
-                        <input type="checkbox" id="checkbox" class="popup__form-checkbox-input">
+                        <input type="checkbox" id="checkbox" class="popup__form-checkbox-input _req">
                         <span class="popup__form-checkbox-check"></span>
                         <a href="#" class="popup__form-checkbox-link">I agree with the privacy policy</a>
                     </label>
