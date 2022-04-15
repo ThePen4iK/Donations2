@@ -1,0 +1,186 @@
+<footer class="footer">
+    <div class="container footer__container">
+        <a href="/index.html" class="header__logo ">
+            <picture class="picture">
+                <source
+                        media="(min-width: 1200px)"
+                        srcset="../img/logo-desk.png, ../img/logo-desk@2x.png 2x"
+                />
+                <img class="logo header__logo" src="../img/logo.png" alt="logo">
+            </picture>
+        </a>
+
+        <div class="footer__date">
+            2022
+        </div>
+    </div>
+
+    <div class="overlay js-overlay-modal"></div>
+    <div class="popup js-popup-crypto">
+        <div class="popup__container">
+            <button class="popup__close">
+                <svg class="popup__icon" width="10" height="10" fill="none">
+                    <use xlink:href="../img/sprite.svg#close"></use>
+                </svg>
+            </button>
+
+            <h2 class="popup__title">
+                Crypto wallet numbers
+            </h2>
+
+            <ul class="popup__list">
+                <li class="popup__item">
+                    <div class="popup__item-wrap">
+                        <h4 class="popup__item-title">BTC (BTC)</h4>
+                        <input type="text" class="popup__item-copy" value="19M3uQoyNt1mZbC6T3rRY18BgFit3GYopz"
+                               readonly></input>
+                        <p class="popup__item-code">19M3uQoyNt1mZbC6T3rRY18BgFit3GYopz</p>
+
+                    </div>
+                    <button class="popup__item-btn">
+                        <svg class="popup__item-icon" width="19" height="21" fill="none">
+                            <use xlink:href="../img/sprite.svg#copy"></use>
+                        </svg>
+
+                        <span class="popup__item-tooltip">Copy wallet number</span>
+                    </button>
+
+                </li>
+
+                <li class="popup__item">
+                    <div class="popup__item-wrap">
+                        <h4 class="popup__item-title">BTC (TRC20)</h4>
+                        <input type="text" class="popup__item-copy" value="TJ82BNPzQY9UNf15S39RzPZnSYQAWqH9qJ" readonly>
+                        <p class="popup__item-code">TJ82BNPzQY9UNf15S39RzPZnSYQAWqH9qJ</p>
+                    </div>
+                    <button class="popup__item-btn">
+                        <svg class="popup__item-icon" width="19" height="21" fill="none">
+                            <use xlink:href="../img/sprite.svg#copy"></use>
+                        </svg>
+
+                        <span class="popup__item-tooltip">Copy wallet number</span>
+
+                    </button>
+                </li>
+
+                <li class="popup__item">
+                    <div class="popup__item-wrap">
+                        <h4 class="popup__item-title">ETH (ERC20)</h4>
+                        <input type="text" class="popup__item-copy" value="0xb26c5a2cf2ed8422fa24c68412e87a09b7d8d58a"
+                               readonly>
+                        <p class="popup__item-code">0xb26c5a2cf2ed8422fa24c68412e87a09b7d8d58a</p>
+                    </div>
+                    <button class="popup__item-btn">
+                        <svg class="popup__item-icon" width="19" height="21" fill="none">
+                            <use xlink:href="../img/sprite.svg#copy"></use>
+                        </svg>
+
+                        <span class="popup__item-tooltip">Copy wallet number</span>
+
+                    </button>
+                </li>
+
+                <li class="popup__item">
+                    <div class="popup__item-wrap">
+                        <h4 class="popup__item-title">USDT (TRC20)</h4>
+                        <input type="text" class="popup__item-copy" value="TWPepJgichC1Hxf7L7ah5FkxUqcL1Ck24v" readonly>
+                        <p class="popup__item-code">TWPepJgichC1Hxf7L7ah5FkxUqcL1Ck24v</p></div>
+                    <button class="popup__item-btn">
+                        <svg class="popup__item-icon" width="19" height="21" fill="none">
+                            <use xlink:href="../img/sprite.svg#copy"></use>
+                        </svg>
+
+                        <span class="popup__item-tooltip">Copy wallet number</span>
+
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <button class="popup__copy">
+            <div class="popup__copy-wrap">
+                <svg width="22" height="16" fill="none" class="popup__copy-icon">
+                    <use xlink:href="../img/sprite.svg#isCopy"></use>
+                </svg>
+            </div>
+            Crypto wallet number is copied
+        </button>
+    </div>
+    <div class="popup popup--mod js-popup-contact">
+        <div class="popup__container">
+            <button class="popup__close">
+                <svg class="popup__icon" width="10" height="10" fill="none">
+                    <use xlink:href="../img/sprite.svg#close"></use>
+                </svg>
+            </button>
+
+            <h2 class="popup__title popup__title--mod">
+                I want to help from outside of Ukraine
+            </h2>
+
+            <form action="#" class="popup__form">
+                <div class="popup__form-wrap">
+                    <ul class="popup__form-list">
+                        <li class="popup__form-item">
+                            <label class="visually-hidden" for="fname"></label>
+<!--                            <span class="popup__form-error">Error text</span>-->
+                            <input type="text" id="fname" class="popup__form-input" placeholder="Enter your first name"
+                                   autocomplete="off">
+                        </li>
+
+                        <li class="popup__form-item">
+                            <label class="visually-hidden" for="lname"></label>
+                            <input type="text" id="lname" class="popup__form-input" placeholder="Enter your last name"
+                                   autocomplete="off">
+                        </li>
+
+                        <li class="popup__form-item">
+                            <label class="visually-hidden" for="tel"></label>
+                            <input type="tel" id="tel" class="popup__form-input" placeholder="Enter your phone number"
+                                   autocomplete="off">
+                        </li>
+
+                        <li class="popup__form-item">
+                            <label class="visually-hidden" for="email"></label>
+                            <input type="email" id="email" class="popup__form-input" placeholder="Enter your email"
+                                   autocomplete="off">
+                        </li>
+                    </ul>
+                </div>
+                <div class="popup__form-wrap">
+                    <!--                    <span class="popup__form-error popup__form-error&#45;&#45;textarea">Error text</span>-->
+                    <textarea class="popup__form-textarea" placeholder="Enter your message"></textarea>
+                </div>
+                <div class="popup__form-wrap">
+                    <label for="checkbox" class="popup__form-checkbox">
+                        <input type="checkbox" id="checkbox" class="popup__form-checkbox-input">
+                        <span class="popup__form-checkbox-check"></span>
+                        <a href="#" class="popup__form-checkbox-link">I agree with the privacy policy</a>
+                    </label>
+                </div>
+                <div class="popup__form-wrap">
+                    <button class="popup__btn">
+                        Send
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="popup js-popup-thanks">
+        <div class="popup__container">
+            <button class="popup__close">
+                <svg class="popup__icon" width="10" height="10" fill="none">
+                    <use xlink:href="../img/sprite.svg#close"></use>
+                </svg>
+            </button>
+
+            <h2 class="popup__title popup__title--thank popup__title--mod">
+                Thank you for your message!
+            </h2>
+            <p class="popup__text">We will contact you soon</p>
+
+            <button class="popup__btn popup__btn--thank">
+                ОК
+            </button>
+        </div>
+    </div>
+</footer>

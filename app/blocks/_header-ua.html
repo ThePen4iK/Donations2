@@ -1,0 +1,49 @@
+<header class="header">
+    <div class="container header__container">
+        <a href="/index.html" class="header__logo">
+            <picture class="picture">
+                <source
+                        media="(min-width: 1200px)"
+                        srcset="../img/logo-desk.png, ../img/logo-desk@2x.png 2x"
+                />
+                <img class="logo header__logo" src="../img/logo.png" alt="logo">
+            </picture>
+        </a>
+
+        <div class="header__wrapper">
+            <nav class="navigation">
+                <ul class="navigation__list">
+                    <li class="navigation__item">
+                        <a href="#what" class="navigation__link">Що ми робимо</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="#gallery" class="navigation__link">Галерея</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="#gear" class="navigation__link">Тактичне спорядження</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="header__language">
+                <span class="header__language-btn">UA</span>
+                <ul class="header__language-list hide">
+                    <li class="header__language-item">
+                        <a href="../indexEN.html" class="header__language-link" data-lang="EN">English </a>
+
+                    </li>
+                    <li class="header__language-item">
+                        <a href="../indexUA.html" class="header__language-link" data-lang="UA">Українська</a>
+                    </li>
+                </ul>
+            </button>
+            <a href="#support" class="btn btn__header">Пожертвуйте</a>
+        </div>
+
+        <button class="hamburger">
+            <div class="hamburger__menu">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </div>
+        </button>
+    </div>
+</header>
