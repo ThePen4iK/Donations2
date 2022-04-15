@@ -15,13 +15,12 @@ $email->addAddress('infoTeamVM@gmail.com');
 
 
 if(!$email->send()){
-    $message = 'ошибка'
+    $message = 'ошибка';
 }else{
-    $message ' отправленно'
+    $message = 'отправленно';
 }
 
 $response = ['message' => $message];
 
 header('Content-type: application/json');
 echo json_encode($response);
-?>
