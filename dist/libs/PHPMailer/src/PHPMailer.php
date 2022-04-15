@@ -3428,7 +3428,7 @@ class PHPMailer
             case 'phrase':
                 if (!preg_match('/[\200-\377]/', $str)) {
                     //Can't use addslashes as we don't know the value of magic_quotes_sybase
-                    $encoded = addcslashes($str, "\0..\37\177\\\"");
+                    $encoded = addcslashes($str, "\0\37\177\\\"");
                     if (($str === $encoded) && !preg_match('/[^A-Za-z0-9!#$%&\'*+\/=?^_`{|}~ -]/', $str)) {
                         return $encoded;
                     }
@@ -4268,8 +4268,8 @@ class PHPMailer
                 if (
                     //Only process relative URLs if a basedir is provided (i.e. no absolute local paths)
                     !empty($basedir)
-                    //Ignore URLs containing parent dir traversal (..)
-                    && (strpos($url, '..') === false)
+                    //Ignore URLs containing parent dir traversal ()
+                    && (strpos($url, '') === false)
                     //Do not change urls that are already inline images
                     && 0 !== strpos($url, 'cid:')
                     //Do not change absolute URLs, including anonymous protocol
@@ -4488,7 +4488,7 @@ class PHPMailer
 
     /**
      * Map a file name to a MIME type.
-     * Defaults to 'application/octet-stream', i.e.. arbitrary binary data.
+     * Defaults to 'application/octet-stream', i.e arbitrary binary data.
      *
      * @param string $filename A file name or full path, does not need to exist as a file
      *

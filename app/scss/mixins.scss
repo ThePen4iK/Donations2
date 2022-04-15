@@ -2,9 +2,9 @@
 	@font-face {
 		font-family: $font_name;
 		font-display: swap;
-		src: url("../fonts/#{$file_name}.eot");
-		src: url("../fonts/#{$file_name}.eot#iefix") format("embedded-opentype"),
-			url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.ttf") format("truetype");
+		src: url("/fonts/#{$file_name}.eot");
+		src: url("/fonts/#{$file_name}.eot#iefix") format("embedded-opentype"),
+			url("/fonts/#{$file_name}.woff") format("woff"), url("/fonts/#{$file_name}.ttf") format("truetype");
 		font-weight: #{$weight};
 		font-style: #{$style};
 	}

@@ -271,7 +271,7 @@ class POP3
 
         //Did we connect?
         if (false === $this->pop_conn) {
-            //It would appear not...
+            //It would appear not.
             $this->setError(
                 "Failed to connect to server $host on port $port. errno: $errno; errstr: $errstr"
             );
