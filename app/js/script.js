@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 let  form = document.getElementById("form");
                 let formData = new FormData(form);
 
-                const response = await fetch('sendemail.php',{
+                const response = await fetch('../php/sendemail.php',{
                     method: "POST",
                     body: formData
                 });
