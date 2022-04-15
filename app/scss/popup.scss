@@ -74,8 +74,9 @@
     color: #393737;
     width: 100%;
     max-width: 426px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     @media(min-width: 768px) {
+      margin-bottom: 30px;
       font-size: 48px;
       line-height: 58px;
     }
