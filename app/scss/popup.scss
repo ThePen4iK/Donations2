@@ -6,17 +6,17 @@
 
   width: 100%;
   max-width: 730px;
-  height: 800px;
+  height: auto;
   padding: 0 15px;
 
-  overflow: auto;
-  scrollbar-width: none;
+  //overflow: auto;
+  //scrollbar-width: none;
 
   z-index: 20;
   visibility: hidden;
-  &::-webkit-scrollbar {
-    width: 0;
-  }
+  //&::-webkit-scrollbar {
+  //  width: 0;
+  //}
   @media(max-width: 576px){
     padding: 30px 15px 100px;
 
@@ -54,7 +54,7 @@
   }
 
   &__container {
-    padding: 80px 30px;
+    padding: 40px 30px;
 
     background-color: #F4F6FA;
     border-radius: 15px;

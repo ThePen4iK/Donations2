@@ -535,6 +535,10 @@ img {
     margin: 0;
   }
 }
+.btn__header--ua {
+  padding: 16px 40px;
+  text-align: center;
+}
 .btn__start {
   font-size: 24px;
   line-height: 29px;
@@ -1109,15 +1113,10 @@ img {
           transform: translate(-50%, -50%);
   width: 100%;
   max-width: 730px;
-  height: 800px;
+  height: auto;
   padding: 0 15px;
-  overflow: auto;
-  scrollbar-width: none;
   z-index: 20;
   visibility: hidden;
-}
-.popup::-webkit-scrollbar {
-  width: 0;
 }
 @media (max-width: 576px) {
   .popup {
@@ -1148,7 +1147,7 @@ img {
   }
 }
 .popup__container {
-  padding: 80px 30px;
+  padding: 40px 30px;
   background-color: #F4F6FA;
   border-radius: 15px;
 }
