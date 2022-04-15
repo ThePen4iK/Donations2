@@ -1147,9 +1147,14 @@ img {
   }
 }
 .popup__container {
-  padding: 40px 30px;
+  padding: 80px 30px;
   background-color: #F4F6FA;
   border-radius: 15px;
+}
+@media (min-width: 768px) {
+  .popup__container {
+    padding: 60px 50px;
+  }
 }
 .popup__title {
   font-family: "Inter", sans-serif;
@@ -1374,7 +1379,7 @@ img {
   .popup__form-list {
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    gap: 30px 20px;
+    gap: 20px;
   }
 }
 .popup__form-wrap {
@@ -1490,8 +1495,8 @@ img {
 @media (min-width: 768px) {
   .popup__form-textarea {
     max-width: 630px;
-    height: 256px;
-    margin: 30px 0;
+    height: 166px;
+    margin: 20px 0;
   }
 }
 @media (any-hover: hover) {
@@ -1617,7 +1622,7 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   cursor: pointer;
 }
 .popup__form-checkbox .popup__form-checkbox-input {

@@ -54,10 +54,14 @@
   }
 
   &__container {
-    padding: 40px 30px;
+    padding: 80px 30px;
 
     background-color: #F4F6FA;
     border-radius: 15px;
+
+    @media(min-width: 768px){
+      padding: 60px 50px;
+    }
   }
 
   &__title {
@@ -282,7 +286,7 @@
       gap: 15px;
       @media(min-width: 768px) {
         grid-template-columns: 1fr 1fr;
-        gap: 30px 20px;
+        gap: 20px;
       }
     }
 
@@ -349,8 +353,8 @@
       margin-bottom: 20px;
       @media(min-width: 768px) {
         max-width: 630px;
-        height: 256px;
-        margin: 30px 0;
+        height: 166px;
+        margin: 20px 0;
       }
       @media(any-hover: hover) {
         &:hover {
@@ -418,7 +422,7 @@
     &-checkbox {
       display: flex;
       align-items: center;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       cursor: pointer;
 
       .popup__form-checkbox-input {
