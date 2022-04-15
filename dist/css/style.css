@@ -833,6 +833,8 @@ img {
 }
 @media (min-width: 992px) {
   .gear__content {
+    width: 100%;
+    max-width: 520px;
     margin-right: 40px;
   }
 }
@@ -906,6 +908,12 @@ img {
     line-height: 22px;
   }
 }
+.gear__img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .help {
   padding-top: 0;
 }
